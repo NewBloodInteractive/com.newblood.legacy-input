@@ -296,19 +296,19 @@ namespace NewBlood
 
         public ButtonControl menuKey { get; private set; }
 
-        public ButtonControl mouse0Button { get; private set; }
+        public ButtonControl mouseButton0 { get; private set; }
 
-        public ButtonControl mouse1Button { get; private set; }
+        public ButtonControl mouseButton1 { get; private set; }
 
-        public ButtonControl mouse2Button { get; private set; }
+        public ButtonControl mouseButton2 { get; private set; }
 
-        public ButtonControl mouse3Button { get; private set; }
+        public ButtonControl mouseButton3 { get; private set; }
 
-        public ButtonControl mouse4Button { get; private set; }
+        public ButtonControl mouseButton4 { get; private set; }
 
-        public ButtonControl mouse5Button { get; private set; }
+        public ButtonControl mouseButton5 { get; private set; }
 
-        public ButtonControl mouse6Button { get; private set; }
+        public ButtonControl mouseButton6 { get; private set; }
 
         public ButtonControl joystickButton0 { get; private set; }
 
@@ -833,13 +833,13 @@ namespace NewBlood
                 { KeyCode.SysReq, sysReqKey = GetChildControl<ButtonControl>("sysReq") },
                 { KeyCode.Break, breakKey = GetChildControl<ButtonControl>("break") },
                 { KeyCode.Menu, menuKey = GetChildControl<ButtonControl>("menu") },
-                { KeyCode.Mouse0, mouse0Button = GetChildControl<ButtonControl>("mouse0") },
-                { KeyCode.Mouse1, mouse1Button = GetChildControl<ButtonControl>("mouse1") },
-                { KeyCode.Mouse2, mouse2Button = GetChildControl<ButtonControl>("mouse2") },
-                { KeyCode.Mouse3, mouse3Button = GetChildControl<ButtonControl>("mouse3") },
-                { KeyCode.Mouse4, mouse4Button = GetChildControl<ButtonControl>("mouse4") },
-                { KeyCode.Mouse5, mouse5Button = GetChildControl<ButtonControl>("mouse5") },
-                { KeyCode.Mouse6, mouse6Button = GetChildControl<ButtonControl>("mouse6") },
+                { KeyCode.Mouse0, mouseButton0 = GetChildControl<ButtonControl>("mouse0") },
+                { KeyCode.Mouse1, mouseButton1 = GetChildControl<ButtonControl>("mouse1") },
+                { KeyCode.Mouse2, mouseButton2 = GetChildControl<ButtonControl>("mouse2") },
+                { KeyCode.Mouse3, mouseButton3 = GetChildControl<ButtonControl>("mouse3") },
+                { KeyCode.Mouse4, mouseButton4 = GetChildControl<ButtonControl>("mouse4") },
+                { KeyCode.Mouse5, mouseButton5 = GetChildControl<ButtonControl>("mouse5") },
+                { KeyCode.Mouse6, mouseButton6 = GetChildControl<ButtonControl>("mouse6") },
                 { KeyCode.JoystickButton0, joystickButton0 = GetChildControl<ButtonControl>("joystickButton0") },
                 { KeyCode.JoystickButton1, joystickButton1 = GetChildControl<ButtonControl>("joystickButton1") },
                 { KeyCode.JoystickButton2, joystickButton2 = GetChildControl<ButtonControl>("joystickButton2") },
