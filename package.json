@@ -1,0 +1,7 @@
+{
+  "name": "com.newblood.legacy-input",
+  "displayName": "Unity Legacy Input",
+  "description": "Implements a LegacyInput device for the Unity Input System.",
+  "version": "1.0.0",
+  "type": "library"
+}
