@@ -8,8 +8,8 @@ using UnityEngine.InputSystem.Utilities;
 
 namespace NewBlood
 { 
-    [StructLayout(LayoutKind.Explicit)]
-    unsafe struct LegacyInputState : IInputStateTypeInfo
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    struct LegacyInputState : IInputStateTypeInfo
     {
         // Unity Engine Legacy Input
         public FourCC format => new FourCC('U', 'E', 'L', 'I');
@@ -373,7 +373,6 @@ namespace NewBlood
         [InputControl(name = "alpha7", layout = "Button", bit = 29)]
         [InputControl(name = "alpha8", layout = "Button", bit = 30)]
         [InputControl(name = "alpha9", layout = "Button", bit = 31)]
-        [FieldOffset(0)]
         public int bits0;
 
         [InputControl(name = "colon", layout = "Button", bit = 0)]
@@ -408,7 +407,6 @@ namespace NewBlood
         [InputControl(name = "q", layout = "Button", bit = 29)]
         [InputControl(name = "r", layout = "Button", bit = 30)]
         [InputControl(name = "s", layout = "Button", bit = 31)]
-        [FieldOffset(4)]
         public int bits1;
 
         [InputControl(name = "t", layout = "Button", bit = 0)]
@@ -443,7 +441,6 @@ namespace NewBlood
         [InputControl(name = "upArrow", layout = "Button", bit = 29)]
         [InputControl(name = "downArrow", layout = "Button", bit = 30)]
         [InputControl(name = "rightArrow", layout = "Button", bit = 31)]
-        [FieldOffset(8)]
         public int bits2;
 
         [InputControl(name = "leftArrow", layout = "Button", bit = 0)]
@@ -478,7 +475,6 @@ namespace NewBlood
         [InputControl(name = "leftAlt", layout = "Button", bit = 29)]
         [InputControl(name = "rightCommand", layout = "Button", bit = 30)]
         [InputControl(name = "leftCommand", layout = "Button", bit = 31)]
-        [FieldOffset(12)]
         public int bits3;
 
         [InputControl(name = "leftWindows", layout = "Button", bit = 0)]
@@ -513,7 +509,6 @@ namespace NewBlood
         [InputControl(name = "joystickButton14", layout = "Button", bit = 29)]
         [InputControl(name = "joystickButton15", layout = "Button", bit = 30)]
         [InputControl(name = "joystickButton16", layout = "Button", bit = 31)]
-        [FieldOffset(16)]
         public int bits4;
 
         [InputControl(name = "joystickButton17", layout = "Button", bit = 0)]
@@ -548,7 +543,6 @@ namespace NewBlood
         [InputControl(name = "joystick2Button6", layout = "Button", bit = 29)]
         [InputControl(name = "joystick2Button7", layout = "Button", bit = 30)]
         [InputControl(name = "joystick2Button8", layout = "Button", bit = 31)]
-        [FieldOffset(20)]
         public int bits5;
 
         [InputControl(name = "joystick2Button9", layout = "Button", bit = 0)]
@@ -583,7 +577,6 @@ namespace NewBlood
         [InputControl(name = "joystick3Button18", layout = "Button", bit = 29)]
         [InputControl(name = "joystick3Button19", layout = "Button", bit = 30)]
         [InputControl(name = "joystick4Button0", layout = "Button", bit = 31)]
-        [FieldOffset(24)]
         public int bits6;
 
         [InputControl(name = "joystick4Button1", layout = "Button", bit = 0)]
@@ -618,7 +611,6 @@ namespace NewBlood
         [InputControl(name = "joystick5Button10", layout = "Button", bit = 29)]
         [InputControl(name = "joystick5Button11", layout = "Button", bit = 30)]
         [InputControl(name = "joystick5Button12", layout = "Button", bit = 31)]
-        [FieldOffset(28)]
         public int bits7;
 
         [InputControl(name = "joystick5Button13", layout = "Button", bit = 0)]
@@ -653,7 +645,6 @@ namespace NewBlood
         [InputControl(name = "joystick7Button2", layout = "Button", bit = 29)]
         [InputControl(name = "joystick7Button3", layout = "Button", bit = 30)]
         [InputControl(name = "joystick7Button4", layout = "Button", bit = 31)]
-        [FieldOffset(32)]
         public int bits8;
 
         [InputControl(name = "joystick7Button5", layout = "Button", bit = 0)]
@@ -688,16 +679,14 @@ namespace NewBlood
         [InputControl(name = "joystick8Button14", layout = "Button", bit = 29)]
         [InputControl(name = "joystick8Button15", layout = "Button", bit = 30)]
         [InputControl(name = "joystick8Button16", layout = "Button", bit = 31)]
-        [FieldOffset(36)]
         public int bits9;
 
         [InputControl(name = "joystick8Button17", layout = "Button", bit = 0)]
         [InputControl(name = "joystick8Button18", layout = "Button", bit = 1)]
         [InputControl(name = "joystick8Button19", layout = "Button", bit = 2)]
-        [FieldOffset(40)]
         public int bits10;
 
-        public void Update()
+        public unsafe void Update()
         {
             fixed (int* bits = &bits0)
             {
